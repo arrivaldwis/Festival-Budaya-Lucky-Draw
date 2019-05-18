@@ -49,14 +49,12 @@ function siapaYgMenang(){
   var undi = null;
   var undi1 = null;
   var nomer_undian_value = document.getElementById("nomer_undian_value");
-  var rand = document.getElementById("rand");
   var query = new AV.Query('allNumber');
   query.count().then(function(count){
     undi = Math.floor((Math.random() * count) + 1);
     query.find().then(function(doc){
       hasilUndi = doc[undi].get('number');
       undi1 = doc[undi].get('number').toString();
-      rand.style.display="none";
       nomer_undian_value.innerText= undi1.toString();
       nomer_undian_value.style.display="block";
     });

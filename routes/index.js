@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Generate Nomor Undian' });
 });
 
-router.get('/anjai', function(req, res, next) {
+router.get('/anjai', function(req, res) {
   res.render('index', { title: 'Generate Undian' });
 });
 
