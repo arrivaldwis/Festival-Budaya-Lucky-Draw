@@ -42,3 +42,21 @@ function getNomer() {
         });
     });
 }
+
+
+function siapaYgMenang(){
+  var hasilUndi = null;
+  var undi = null;
+  var nomer_undian_value = document.getElementById("nomer_undian_value");
+  var query = new AV.Query('allNumber');
+  query.count().then(function(count){
+    undi = Math.floor((Math.random() * count) + 1);
+    query.find().then(function(doc){
+      hasilUndi = doc[undi].get('number').toString();
+      nomer_undian_value.innerText= hasilUndi.toString();
+      nomer_undian_value.style.display="block";
+    });
+  }),function (error) {
+    console.log(error.toString());
+  };
+}
