@@ -33,7 +33,7 @@ function getNomer() {
         allnum.set('wechatid', wechatid.value.toString());
         allnum.save().then(function (allnum) {
             console.log('New object created with objectId: ' + allnum.id);
-            nomer_undia.innerText = "Nomer Undian anda:\n";
+            nomer_undia.innerText = "Your Lucky Number:\n 您的抽奖号：\n";
             nomer_undian_value.innerText = allnum.get('number').toString();
             nomer_undia.style.display = "block";
             nomer_undian_value.style.display = "block";
